@@ -2,7 +2,7 @@
   <div id="app">
     <el-header>
       <el-menu
-        :default-active="$route.path"
+        :default-active="activeIndex"
         class="el-menu-demo"
         mode="horizontal"
         @select="handleSelect"
@@ -30,6 +30,7 @@
 export default {
   data() {
     return {
+      activeIndex:this.$route.path,
       navList: [
         { name: "/micapp-vue1", navItem: "我的vue1" },
         { name: "/micapp-vue2", navItem: "我的vue2" },
@@ -37,8 +38,9 @@ export default {
     };
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+    handleSelect(key) {
+      // console.log(key, keyPath);
+      this.activeIndex = key.toString();
     },
   },
 };
@@ -54,8 +56,7 @@ html,
 #app {
   height: 100vh;
 }
-.el-header,
-.el-footer {
+.el-header {
   background-color: #b3c0d1;
   color: #333;
   text-align: center;
@@ -66,7 +67,6 @@ html,
   background-color: #d3dce6;
   color: #333;
   text-align: center;
-  height: 100%;
 }
 
 .el-main {

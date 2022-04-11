@@ -1,8 +1,8 @@
 const packageName = require("./package.json").name;
 
 module.exports = {
+  publicPath:"http://localhost:8082/",
   configureWebpack: {
-    // publicPath:"http://localhost:8082/",
     mode:"development",
     output: {
       // 必须打包出一个库文件

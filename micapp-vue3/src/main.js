@@ -4,8 +4,8 @@ import router from "./router";
 import store from "./store";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-// import { registerMicroApps, start } from "qiankun";
-import { registerMicroApps, start } from "./micro-qiankun";
+import { registerMicroApps, start } from "qiankun";
+// import { registerMicroApps, start } from "./micro-qiankun"; //如果想探究原理请打开这行，注释第七行
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
@@ -25,19 +25,13 @@ registerMicroApps([
   },
 ]);
 
+// start()
 start({
   sandbox:{
     // strictStyleIsolation:true,//通过 shadow 解决样式冲突
     experimentalStyleIsolation:true,// 通过选择器来解决样式冲突
   }
 });
-// import { loadMicroApp } from "qiankun";
-
-// loadMicroApp({
-//   name: "app",
-//   entry: "//localhost:8082",
-//   container: "#container",
-// });
 
 new Vue({
   router,

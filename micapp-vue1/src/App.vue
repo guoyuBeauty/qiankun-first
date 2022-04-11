@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   color: #2c3e50;
   display: flex;

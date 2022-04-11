@@ -1,27 +1,25 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue2.js App"/> -->
-    <h1>我是vue2</h1>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue2.js App"/>
+    <!-- <h1>我是vue2</h1> -->
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    HelloWorld
   }
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   color: #2c3e50;
-  display: flex;
-  justify-content: center;
   height: calc(100% - 61px);
   width: 100%;
 }
